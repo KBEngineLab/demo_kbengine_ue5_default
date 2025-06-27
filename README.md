@@ -1,4 +1,4 @@
-KBEngine_ue4_demo(UE4.25.1)
+kbengine_ue5_demo(UE5.6)
 =============
 
 ## This client-project is written for KBEngine(a MMOG engine of server)
@@ -7,16 +7,16 @@ http://www.kbengine.org
 
 ## 中文
 
-[Demo搭建文档](https://github.com/kbengine/kbengine_ue4_demo/blob/master/README_CN.md)，QQ交流群：461368412，[论坛](http://bbs.kbengine.org)
+[Demo搭建文档](https://github.com/kbengine/kbengine_ue5_demo/blob/master/README_CN.md)，QQ交流群：461368412，[论坛](http://bbs.kbengine.org)
 
 ## Releases
 
-	sources		: https://github.com/kbengine/kbengine_ue4_demo/releases/latest
+	sources		: https://github.com/kbengine/kbengine_ue5_demo/releases/latest
 
 
 ## KBE-Plugins docs
 
-	kbengine_ue4_demo\Plugins\kbengine_ue4_plugins\README.md
+	kbengine_ue5_demo\Plugins\kbengine_ue5_plugins\README.md
 
 
 ## Start:
@@ -33,7 +33,7 @@ http://www.kbengine.org
 
 	2. Use git to get the demo-assets(server):
 
-		In the kbengine_ue4_demo directory:
+		In the kbengine_ue5_demo directory:
 
 		* Git command: git submodule update --init --remote
 ![submodule_update1](http://kbengine.github.io/assets/img/screenshots/gitbash_submodule.png)
@@ -47,13 +47,13 @@ http://www.kbengine.org
 				https://github.com/kbengine/kbengine_demos_assets/releases/latest
 				unzip and copy to "kbengine/"  (The root directory server engine, such as $KBE_ROOT)
 
-	3. Copy "kbengine_ue4_demo\kbengine_demos_assets" to "kbengine\" root directory
+	3. Copy "kbengine_ue5_demo\kbengine_demos_assets" to "kbengine\" root directory
 ![demo_configure](http://kbengine.github.io/assets/img/screenshots/demo_copy_kbengine.jpg)
 
 
 	4. Generate a Client plugins from the server-side asset library (optional, one by default unless the server-assets is modified)
 		1: Double-click to run kbengine/kbengine_demos_asset/gensdk.bat
-		2: Copy kbengine_ue4_plugins to kbengine_ue4_demo\Plugins\
+		2: Copy kbengine_ue5_plugins to kbengine_ue5_demo\Plugins\
 
 
 ## Configure Demo(Optional):
@@ -61,13 +61,13 @@ http://www.kbengine.org
 	Change the login address:
 ![demo_configure](http://kbengine.github.io/assets/img/screenshots/demo_configure_ue4.jpg)
 
-		kbengine_ue4_demo\Content\ClientApp-> ip
-		kbengine_ue4_demo\Content\ClientApp-> port
+		kbengine_ue5_demo\Content\ClientApp-> ip
+		kbengine_ue5_demo\Content\ClientApp-> port
 
 
 ## Start the Servers:
 
-	Ensure that the "kbengine_ue4_demo\kbengine_demos_assets" has been copied to the "kbengine\" directory
+	Ensure that the "kbengine_ue5_demo\kbengine_demos_assets" has been copied to the "kbengine\" directory
 		Reference：Start
 
 	Check the startup status:
@@ -87,7 +87,7 @@ http://www.kbengine.org
 
 ## Start the Client:
 
-	Directly start(UE4Editor or Executable file).
+	Directly start(ue5Editor or Executable file).
 
 
 ## Navmesh-navigation(Optional):
@@ -134,20 +134,20 @@ http://www.kbengine.org
 		Scripts\interfaces\：
 			Corresponding to the module defined in KBE(entity_defs\interfaces).
 
-	Source\kbengine_ue4_demo:
-		kbengine_ue4_demo\PlayerCharacter：
+	Source\kbengine_ue5_demo:
+		kbengine_ue5_demo\PlayerCharacter：
 			Current client player, the script processing model and animation and other parts.
 
-		kbengine_ue4_demo\GameEntity：
+		kbengine_ue5_demo\GameEntity：
 			Whether the monster or other players, by the script responsible for the model and animation and other parts.
 
-		kbengine_ue4_demo\GameModeLogin:
+		kbengine_ue5_demo\GameModeLogin:
 			Manage landing scenes, listen for events related to the KBE plug-in, and trigger events to the plug-in.
 
-		kbengine_ue4_demo\GameModeSelectAvatar:
+		kbengine_ue5_demo\GameModeSelectAvatar:
 			Manage role selection scenarios, listen for events related to the KBE plug-in, and trigger events on the plug-in.
 
-		kbengine_ue4_demo\GameModeWorld:
+		kbengine_ue5_demo\GameModeWorld:
 			Listen to events related to the KBE plug-in, trigger events to the plug-in, and manage scripts for in-game maps, such as creating a specific 3D monster in the scene.
 
 	Content\LoginScene:

@@ -1,10 +1,10 @@
-# ---------------[ UE4 generated ]------------------ #
+# ---------------[ ue5 generated ]------------------ #
 /Binaries
 /DerivedDataCache
 /Intermediate
 /Saved
-/Plugins/kbengine_ue4_plugins/Binaries
-/Plugins/kbengine_ue4_plugins/Intermediate
+/Plugins/kbengine_ue5_plugins/Binaries
+/Plugins/kbengine_ue5_plugins/Intermediate
 
 # ----[ Visual Studio ]------- #
 /.vs

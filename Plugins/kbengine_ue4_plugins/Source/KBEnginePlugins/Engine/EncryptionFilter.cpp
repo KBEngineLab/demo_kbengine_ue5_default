@@ -3,7 +3,7 @@
 #include "MessageReader.h"
 #include "PacketSenderTCP.h"
 #include "PacketSenderKCP.h"
-#include "Engine/KBDebug.h"
+#include "../Engine/KBDebug.h"
 
 namespace KBEngine
 {

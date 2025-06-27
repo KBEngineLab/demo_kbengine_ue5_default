@@ -193,7 +193,7 @@ inline bool isNumeric(KBEngine::KBVar& v)
 #define UE4_SCALE_UNIT_TO_METER 100.f
 
 // 将KBE坐标系的position(Vector3)转换为UE4坐标系的位置
-inline void KBPos2UE4Pos(FVector& UE4_POSITION, const FVector& KBE_POSITION)
+inline void KBPos2UE4Pos(FVector3f& UE4_POSITION, const FVector3f& KBE_POSITION)
 {	
 	// UE4坐标单位为厘米， KBE单位为米， 因此转化需要常量
 	UE4_POSITION.Y = KBE_POSITION.X * UE4_SCALE_UNIT_TO_METER;
@@ -202,7 +202,7 @@ inline void KBPos2UE4Pos(FVector& UE4_POSITION, const FVector& KBE_POSITION)
 }	
 
 // 将UE4坐标系的position(Vector3)转换为KBE坐标系的位置
-inline void UE4Pos2KBPos(FVector& KBE_POSITION, const FVector& UE4_POSITION)
+inline void UE4Pos2KBPos(FVector3f& KBE_POSITION, const FVector3f& UE4_POSITION)
 {
 	// UE4坐标单位为厘米， KBE单位为米， 因此转化需要常量
 	KBE_POSITION.X = UE4_POSITION.Y / UE4_SCALE_UNIT_TO_METER;
@@ -211,7 +211,7 @@ inline void UE4Pos2KBPos(FVector& KBE_POSITION, const FVector& UE4_POSITION)
 }
 
 // 将KBE方向转换为UE4方向
-inline void KBDir2UE4Dir(FRotator& UE4_DIRECTION, const FVector& KBE_DIRECTION)
+inline void KBDir2UE4Dir(FRotator& UE4_DIRECTION, const FVector3f& KBE_DIRECTION)
 {
 	UE4_DIRECTION.Pitch = FMath::RadiansToDegrees<float>(KBE_DIRECTION.Y);
 	UE4_DIRECTION.Yaw = FMath::RadiansToDegrees<float>(KBE_DIRECTION.Z);
@@ -219,7 +219,7 @@ inline void KBDir2UE4Dir(FRotator& UE4_DIRECTION, const FVector& KBE_DIRECTION)
 }
 
 // 将UE4方向转换为KBE方向
-inline void UE4Dir2KBDir(FVector& KBE_DIRECTION, const FRotator& UE4_DIRECTION)
+inline void UE4Dir2KBDir(FVector3f& KBE_DIRECTION, const FRotator& UE4_DIRECTION)
 {
 	KBE_DIRECTION.Y = FMath::DegreesToRadians<float>(UE4_DIRECTION.Pitch);
 	KBE_DIRECTION.Z = FMath::DegreesToRadians<float>(UE4_DIRECTION.Yaw);

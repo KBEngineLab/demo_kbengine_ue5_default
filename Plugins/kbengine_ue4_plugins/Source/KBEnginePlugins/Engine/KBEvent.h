@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "Object.h"
+#include "UObject/Object.h"
 #include "KBECommon.h"
 #include "KBEventTypes.h"
 #include "KBEvent.generated.h"
@@ -312,7 +312,7 @@ class KBENGINEPLUGINS_API UKBEventData_updatePosition : public UKBEventData
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = KBEngine)
-	FVector position;
+	FVector3f position;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = KBEngine)
 	FRotator direction;
@@ -334,7 +334,7 @@ class KBENGINEPLUGINS_API UKBEventData_set_position : public UKBEventData
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = KBEngine)
-	FVector position;
+	FVector3f position;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = KBEngine)
 	int entityID;
@@ -455,11 +455,11 @@ public:
 	FString res;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = KBEngine)
-	FVector position;
+	FVector3f position;
 
 	// roll, pitch, yaw
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = KBEngine)
-	FVector direction;
+	FVector3f direction;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = KBEngine)
 	float moveSpeed;
@@ -506,11 +506,11 @@ public:
 	FString res;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = KBEngine)
-	FVector position;
+	FVector3f position;
 
 	// roll, pitch, yaw
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = KBEngine)
-	FVector direction;
+	FVector3f direction;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = KBEngine)
 	float moveSpeed;

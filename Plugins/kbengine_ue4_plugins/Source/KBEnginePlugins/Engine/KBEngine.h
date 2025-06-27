@@ -57,7 +57,7 @@ public:
 		return serverdatas_;
 	}
 
-	void entityServerPos(const FVector& pos)
+	void entityServerPos(const FVector3f& pos)
 	{
 		entityServerPos_ = pos;
 	}
@@ -487,7 +487,7 @@ protected:
 	TArray<Entity*> controlledEntities_;
 
 	// 当前服务端最后一次同步过来的玩家位置
-	FVector entityServerPos_;
+	FVector3f entityServerPos_;
 
 	// space的数据，具体看API手册关于spaceData
 	// https://github.com/kbengine/kbengine/tree/master/docs/api

@@ -31,7 +31,8 @@ void UKBETicker::Tick(float DeltaTime)
 	// 每个tick将UE4的玩家坐标写入到KBE插件中的玩家实体坐标，插件会定期同步给服务器
 	if (kbe_player && ue4_player)
 	{
-		UE4Pos2KBPos(kbe_player->position, ue4_player->GetActorLocation());
+		FVector player_location = ue4_player->GetActorLocation();
+		UE4Pos2KBPos(kbe_player->position, FVector3f(player_location.X, player_location.Y, player_location.Z));
 		UE4Dir2KBDir(kbe_player->direction, ue4_player->GetActorRotation());
 
 		kbe_player->isOnGround(ue4_player->GetMovementComponent() && ue4_player->GetMovementComponent()->IsMovingOnGround());

@@ -8,6 +8,8 @@ public class kbengine_ue4_demoTarget : TargetRules
 	public kbengine_ue4_demoTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
-		ExtraModuleNames.Add("kbengine_ue4_demo");
+		DefaultBuildSettings = BuildSettingsVersion.V5;
+        IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_6;
+        ExtraModuleNames.Add("kbengine_ue4_demo");
 	}
 }

@@ -148,7 +148,7 @@ void Entity::onLeaveSpace()
 
 }
 
-void Entity::onPositionChanged(const FVector& oldValue)
+void Entity::onPositionChanged(const FVector3f& oldValue)
 {
 	//DEBUG_MSG("%s::onPositionChanged: (%f, %f, %f) => (%f, %f, %f)", *className, 
 	//	oldValue.X, oldValue.Y, oldValue.Z, position.X, position.Y, position.Z); 
@@ -167,7 +167,7 @@ void Entity::onPositionChanged(const FVector& oldValue)
 	}
 }
 
-void Entity::onDirectionChanged(const FVector& oldValue)
+void Entity::onDirectionChanged(const FVector3f& oldValue)
 {
 	//DEBUG_MSG("%s::onDirectionChanged: (%f, %f, %f) => (%f, %f, %f)", *className, 
 	//	oldValue.X, oldValue.Y, oldValue.Z, direction.X, direction.Y, direction.Z); 

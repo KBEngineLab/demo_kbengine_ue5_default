@@ -7,13 +7,13 @@
 #include "KBVar.h"
 #include "Entity.h"
 
-#include "Scripts/Account.h"
-#include "Scripts/Avatar.h"
-#include "Scripts/Components/Test.h"
-#include "Scripts/Components/TestNoBase.h"
-#include "Scripts/Monster.h"
-#include "Scripts/NPC.h"
-#include "Scripts/Gate.h"
+#include "../Scripts/Account.h"
+#include "../Scripts/Avatar.h"
+#include "../Scripts/Components/Test.h"
+#include "../Scripts/Components/TestNoBase.h"
+#include "../Scripts/Monster.h"
+#include "../Scripts/NPC.h"
+#include "../Scripts/Gate.h"
 
 namespace KBEngine
 {
@@ -132,7 +132,7 @@ void EntityDef::initScriptModules()
 	pAccount_position->properUtype = 40000;
 	pAccount_position->properFlags = 4;
 	pAccount_position->aliasID = 1;
-	KBVar* pAccount_position_defval = new KBVar(FVector());
+	KBVar* pAccount_position_defval = new KBVar(FVector3f());
 	pAccount_position->pDefaultVal = pAccount_position_defval;
 	pAccountModule->propertys.Add(TEXT("position"), pAccount_position); 
 
@@ -146,7 +146,7 @@ void EntityDef::initScriptModules()
 	pAccount_direction->properUtype = 40001;
 	pAccount_direction->properFlags = 4;
 	pAccount_direction->aliasID = 2;
-	KBVar* pAccount_direction_defval = new KBVar(FVector());
+	KBVar* pAccount_direction_defval = new KBVar(FVector3f());
 	pAccount_direction->pDefaultVal = pAccount_direction_defval;
 	pAccountModule->propertys.Add(TEXT("direction"), pAccount_direction); 
 
@@ -318,7 +318,7 @@ void EntityDef::initScriptModules()
 	pAvatar_position->properUtype = 40000;
 	pAvatar_position->properFlags = 4;
 	pAvatar_position->aliasID = 1;
-	KBVar* pAvatar_position_defval = new KBVar(FVector());
+	KBVar* pAvatar_position_defval = new KBVar(FVector3f());
 	pAvatar_position->pDefaultVal = pAvatar_position_defval;
 	pAvatarModule->propertys.Add(TEXT("position"), pAvatar_position); 
 
@@ -332,7 +332,7 @@ void EntityDef::initScriptModules()
 	pAvatar_direction->properUtype = 40001;
 	pAvatar_direction->properFlags = 4;
 	pAvatar_direction->aliasID = 2;
-	KBVar* pAvatar_direction_defval = new KBVar(FVector());
+	KBVar* pAvatar_direction_defval = new KBVar(FVector3f());
 	pAvatar_direction->pDefaultVal = pAvatar_direction_defval;
 	pAvatarModule->propertys.Add(TEXT("direction"), pAvatar_direction); 
 
@@ -816,7 +816,7 @@ void EntityDef::initScriptModules()
 	pTest_position->properUtype = 40000;
 	pTest_position->properFlags = 4;
 	pTest_position->aliasID = 1;
-	KBVar* pTest_position_defval = new KBVar(FVector());
+	KBVar* pTest_position_defval = new KBVar(FVector3f());
 	pTest_position->pDefaultVal = pTest_position_defval;
 	pTestModule->propertys.Add(TEXT("position"), pTest_position); 
 
@@ -830,7 +830,7 @@ void EntityDef::initScriptModules()
 	pTest_direction->properUtype = 40001;
 	pTest_direction->properFlags = 4;
 	pTest_direction->aliasID = 2;
-	KBVar* pTest_direction_defval = new KBVar(FVector());
+	KBVar* pTest_direction_defval = new KBVar(FVector3f());
 	pTest_direction->pDefaultVal = pTest_direction_defval;
 	pTestModule->propertys.Add(TEXT("direction"), pTest_direction); 
 
@@ -937,7 +937,7 @@ void EntityDef::initScriptModules()
 	pTestNoBase_position->properUtype = 40000;
 	pTestNoBase_position->properFlags = 4;
 	pTestNoBase_position->aliasID = 1;
-	KBVar* pTestNoBase_position_defval = new KBVar(FVector());
+	KBVar* pTestNoBase_position_defval = new KBVar(FVector3f());
 	pTestNoBase_position->pDefaultVal = pTestNoBase_position_defval;
 	pTestNoBaseModule->propertys.Add(TEXT("position"), pTestNoBase_position); 
 
@@ -951,7 +951,7 @@ void EntityDef::initScriptModules()
 	pTestNoBase_direction->properUtype = 40001;
 	pTestNoBase_direction->properFlags = 4;
 	pTestNoBase_direction->aliasID = 2;
-	KBVar* pTestNoBase_direction_defval = new KBVar(FVector());
+	KBVar* pTestNoBase_direction_defval = new KBVar(FVector3f());
 	pTestNoBase_direction->pDefaultVal = pTestNoBase_direction_defval;
 	pTestNoBaseModule->propertys.Add(TEXT("direction"), pTestNoBase_direction); 
 
@@ -1042,7 +1042,7 @@ void EntityDef::initScriptModules()
 	pMonster_position->properUtype = 40000;
 	pMonster_position->properFlags = 4;
 	pMonster_position->aliasID = 1;
-	KBVar* pMonster_position_defval = new KBVar(FVector());
+	KBVar* pMonster_position_defval = new KBVar(FVector3f());
 	pMonster_position->pDefaultVal = pMonster_position_defval;
 	pMonsterModule->propertys.Add(TEXT("position"), pMonster_position); 
 
@@ -1056,7 +1056,7 @@ void EntityDef::initScriptModules()
 	pMonster_direction->properUtype = 40001;
 	pMonster_direction->properFlags = 4;
 	pMonster_direction->aliasID = 2;
-	KBVar* pMonster_direction_defval = new KBVar(FVector());
+	KBVar* pMonster_direction_defval = new KBVar(FVector3f());
 	pMonster_direction->pDefaultVal = pMonster_direction_defval;
 	pMonsterModule->propertys.Add(TEXT("direction"), pMonster_direction); 
 
@@ -1302,7 +1302,7 @@ void EntityDef::initScriptModules()
 	pNPC_position->properUtype = 40000;
 	pNPC_position->properFlags = 4;
 	pNPC_position->aliasID = 1;
-	KBVar* pNPC_position_defval = new KBVar(FVector());
+	KBVar* pNPC_position_defval = new KBVar(FVector3f());
 	pNPC_position->pDefaultVal = pNPC_position_defval;
 	pNPCModule->propertys.Add(TEXT("position"), pNPC_position); 
 
@@ -1316,7 +1316,7 @@ void EntityDef::initScriptModules()
 	pNPC_direction->properUtype = 40001;
 	pNPC_direction->properFlags = 4;
 	pNPC_direction->aliasID = 2;
-	KBVar* pNPC_direction_defval = new KBVar(FVector());
+	KBVar* pNPC_direction_defval = new KBVar(FVector3f());
 	pNPC_direction->pDefaultVal = pNPC_direction_defval;
 	pNPCModule->propertys.Add(TEXT("direction"), pNPC_direction); 
 
@@ -1447,7 +1447,7 @@ void EntityDef::initScriptModules()
 	pGate_position->properUtype = 40000;
 	pGate_position->properFlags = 4;
 	pGate_position->aliasID = 1;
-	KBVar* pGate_position_defval = new KBVar(FVector());
+	KBVar* pGate_position_defval = new KBVar(FVector3f());
 	pGate_position->pDefaultVal = pGate_position_defval;
 	pGateModule->propertys.Add(TEXT("position"), pGate_position); 
 
@@ -1461,7 +1461,7 @@ void EntityDef::initScriptModules()
 	pGate_direction->properUtype = 40001;
 	pGate_direction->properFlags = 4;
 	pGate_direction->aliasID = 2;
-	KBVar* pGate_direction_defval = new KBVar(FVector());
+	KBVar* pGate_direction_defval = new KBVar(FVector3f());
 	pGate_direction->pDefaultVal = pGate_direction_defval;
 	pGateModule->propertys.Add(TEXT("direction"), pGate_direction); 
 

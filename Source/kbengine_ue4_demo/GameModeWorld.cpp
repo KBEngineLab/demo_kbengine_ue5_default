@@ -116,7 +116,7 @@ void AGameModeWorld::onEnterWorld_Implementation(const UKBEventData* pEventData)
 	
 	FRotator Rot(0.f, 0.f, 0.f);
 	KBDir2UE4Dir(Rot, pData->direction);
-	FTransform SpawnTransform(Rot, pData->position);
+	FTransform SpawnTransform(Rot, FVector(pData->position));
 
 	if (pData->isPlayer)
 	{
@@ -159,7 +159,7 @@ void AGameModeWorld::onEnterSpace_Implementation(const UKBEventData* pEventData)
 
 	FRotator Rot(0.f, 0.f, 0.f);
 	KBDir2UE4Dir(Rot, pData->direction);
-	FTransform SpawnTransform(Rot, pData->position);
+	FTransform SpawnTransform(Rot, FVector(pData->position));
 
 	if (pData->isPlayer)
 	{
@@ -196,8 +196,8 @@ void AGameModeWorld::set_position_Implementation(const UKBEventData* pEventData)
 
 	if (pAGameEntity)
 	{
-		pAGameEntity->SetActorLocation(pData->position);
-		pAGameEntity->setTargetLocation(pData->position);
+		pAGameEntity->SetActorLocation(FVector(pData->position));
+		pAGameEntity->setTargetLocation(FVector(pData->position));
 		pAGameEntity->setIsOnGround(pData->isOnGround);
 	}
 }
@@ -220,7 +220,7 @@ void AGameModeWorld::updatePosition_Implementation(const UKBEventData* pEventDat
 
 	if (pAGameEntity)
 	{
-		pAGameEntity->setTargetLocation(pData->position);
+		pAGameEntity->setTargetLocation(FVector(pData->position));
 		pAGameEntity->setIsOnGround(pData->isOnGround);
 	}
 }

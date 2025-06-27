@@ -4,9 +4,9 @@
 #include "iostream"
 #include <stdlib.h>
 #include <fstream>
-#include "Paths.h"
-#include "PlatformFilemanager.h"
-#include "FileHelper.h"
+#include "Misc/Paths.h"
+#include "HAL/PlatformFilemanager.h"
+#include "Misc/FileHelper.h"
 //#include "OutPutDeviceDebug.h"
 
 namespace KBEngine
@@ -100,9 +100,9 @@ void ClientSDKUpdater::onImportClientSDK(const UKBEventData* eventData)
 			replaceNewSDK();
 			UE_LOG(LogTemp, Warning, TEXT("End Update KBEnginePlugin!"));
 
-			UKBEventData_onImportClientSDKSuccessfully* pEventData = NewObject<UKBEventData_onImportClientSDKSuccessfully>();
+			UKBEventData_onImportClientSDKSuccessfully* pEventData1 = NewObject<UKBEventData_onImportClientSDKSuccessfully>();
 
-			KBENGINE_EVENT_FIRE(KBEventTypes::onImportClientSDKSuccessfully, pEventData);
+			KBENGINE_EVENT_FIRE(KBEventTypes::onImportClientSDKSuccessfully, pEventData1);
 		}
 	}
 }
@@ -227,7 +227,7 @@ void ClientSDKUpdater::moveDirectory(FString fromDicPath, FString toDicPath)
 	for (int i = 0; i < fileNames.Num(); i++)
 	{
 		tempFileName = fileNames[i];
-		tempFileName.Replace(*fromDicPath, *toDicPath);
+		tempFileName = tempFileName.Replace(*fromDicPath, *toDicPath);
 		PlatformFile.MoveFile(*tempFileName, *fileNames[i]);
 	}
 }

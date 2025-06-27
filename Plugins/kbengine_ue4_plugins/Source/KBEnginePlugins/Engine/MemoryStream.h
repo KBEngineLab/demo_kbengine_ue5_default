@@ -548,12 +548,12 @@ public:
 		return FVector2D(X, Y);
 	}
 
-	FVector readVector3()
+	FVector3f readVector3()
 	{
 		float X = readFloat();
 		float Y = readFloat();
 		float Z = readFloat();
-		return FVector(X, Y, Z);
+		return FVector3f(X, Y, Z);
 	}
 
 	FVector4 readVector4()
@@ -874,7 +874,7 @@ public:
 		writeFloat(v.Y);
 	}
 
-	void writeVector3(const FVector& v)
+	void writeVector3(const FVector3f& v)
 	{
 		writeFloat(v.X);
 		writeFloat(v.Y);

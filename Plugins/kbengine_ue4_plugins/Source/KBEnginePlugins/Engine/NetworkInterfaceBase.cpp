@@ -6,6 +6,7 @@
 #include "KBEvent.h"
 #include "KBDebug.h"
 #include "Interfaces.h"
+#include "IPAddressAsyncResolve.h"
 #include "KBEngine.h"
 
 namespace KBEngine

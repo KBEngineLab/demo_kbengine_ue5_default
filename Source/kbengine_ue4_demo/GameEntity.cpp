@@ -104,9 +104,9 @@ void AGameEntity::FaceRotation(FRotator NewRotation, float DeltaTime)
 	Super::FaceRotation(CurrentRotation, DeltaTime);
 }
 
-void AGameEntity::setModelID(int modelID)
+void AGameEntity::setModelID(int modelID1)
 {
-	this->modelID = modelID;
+	this->modelID = modelID1;
 
 	if (this->modelID == ModelID_Avatar)
 	{

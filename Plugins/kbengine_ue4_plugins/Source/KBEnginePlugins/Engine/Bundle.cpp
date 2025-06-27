@@ -285,7 +285,7 @@ void Bundle::writeVector2(const FVector2D& v)
 	(*pCurrPacket_).writeVector2(v);
 }
 
-void Bundle::writeVector3(const FVector& v)
+void Bundle::writeVector3(const FVector3f& v)
 {
 	checkStream(12);
 	(*pCurrPacket_).writeVector3(v);

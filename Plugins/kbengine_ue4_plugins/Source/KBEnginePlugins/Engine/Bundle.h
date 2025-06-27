@@ -136,7 +136,7 @@ public:
 	}
 
 	void writeVector2(const FVector2D& v);
-	void writeVector3(const FVector& v);
+	void writeVector3(const FVector3f& v);
 	void writeVector4(const FVector4& v);
 
 protected:

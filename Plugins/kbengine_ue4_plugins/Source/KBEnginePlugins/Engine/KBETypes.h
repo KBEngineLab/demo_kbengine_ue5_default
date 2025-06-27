@@ -52,7 +52,7 @@ typedef TArray<uint8> BLOB;
 
 typedef FVector2D VECTOR2;
 
-typedef FVector VECTOR3;
+typedef FVector3f VECTOR3;
 
 typedef FVector4 VECTOR4;
 
@@ -82,9 +82,9 @@ typedef uint32 ENTITY_NO;
 
 typedef uint32 SPACE_ID;
 
-typedef FVector POSITION3D;
+typedef FVector3f POSITION3D;
 
-typedef FVector DIRECTION3D;
+typedef FVector3f DIRECTION3D;
 
 typedef uint32 ENTITY_UTYPE;
 

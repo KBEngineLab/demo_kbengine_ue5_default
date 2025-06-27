@@ -2,8 +2,8 @@
 #include "KBECommon.h"
 
 #if PLATFORM_WINDOWS
-#include "WindowsHWrapper.h"
-#include "AllowWindowsPlatformTypes.h"
+#include "Windows/WindowsHWrapper.h"
+#include "Windows/AllowWindowsPlatformTypes.h"
 #endif
 
 #define UI UI_ST
@@ -14,7 +14,7 @@ THIRD_PARTY_INCLUDES_END
 #undef UI
 
 #if PLATFORM_WINDOWS
-#include "HideWindowsPlatformTypes.h"
+#include "Windows/HideWindowsPlatformTypes.h"
 #endif
 
 namespace KBEngine

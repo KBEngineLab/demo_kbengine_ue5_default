@@ -123,9 +123,10 @@ bool UKBEMain::isUpdateSDK()
 {
 #if WITH_EDITOR
 	return automaticallyUpdateSDK;
-#endif
+#else
 
 	return false;
+#endif
 }
 
 void UKBEMain::downloadSDKFromServer()
@@ -267,6 +268,41 @@ bool UKBEMain::createAccount(FString username, FString password, const TArray<ui
 	pEventData->password = password;
 	pEventData->datas = datas;
 	KBENGINE_EVENT_FIRE(KBEngine::KBEventTypes::createAccount, pEventData);
+	return true;
+}
+
+bool UKBEMain::resetPassword(FString username)
+{
+	if (!KBEngine::KBEngineApp::getSingleton().isInitialized())
+	{
+		return false;
+	}
+	UKBEventData_resetPassword* pEventData = NewObject<UKBEventData_resetPassword>();
+	pEventData->username = username;
+	KBENGINE_EVENT_FIRE(KBEngine::KBEventTypes::resetPassword, pEventData);
+	return true;
+}
+bool UKBEMain::bindAccountEmail(FString email)
+{	
+	if (!KBEngine::KBEngineApp::getSingleton().isInitialized())
+	{
+		return false;
+	}
+	UKBEventData_bindAccountEmail* pEventData = NewObject<UKBEventData_bindAccountEmail>();
+	pEventData->email = email;
+	KBENGINE_EVENT_FIRE(KBEngine::KBEventTypes::bindAccountEmail, pEventData);
+	return true;
+}
+bool UKBEMain::newPassword(FString oldPassword, FString newPassword)
+{
+	if (!KBEngine::KBEngineApp::getSingleton().isInitialized())
+	{
+		return false;
+	}
+	UKBEventData_newPassword* pEventData = NewObject<UKBEventData_newPassword>();
+	pEventData->old_password = oldPassword;
+	pEventData->new_password = newPassword;
+	KBENGINE_EVENT_FIRE(KBEngine::KBEventTypes::newPassword, pEventData);
 	return true;
 }
 

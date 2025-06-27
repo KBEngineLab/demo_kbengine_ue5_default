@@ -10,8 +10,6 @@ public class KBEnginePlugins : ModuleRules
     {
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-        bEnableUndefinedIdentifierWarnings = false;
-
         string[] PrivateModules = new string[] { "Slate", "SlateCore", "Networking", "Sockets", "OpenSSL" };
         string[] PublicModules = new string[] { "Core", "CoreUObject", "Engine"};
         List<string> PublicModulesList = new List<string>(PublicModules);
@@ -25,8 +23,6 @@ public class KBEnginePlugins : ModuleRules
 		PrivateIncludePaths.AddRange(
 			new string[] {
 				// ... add other private include paths required here ...
-				"KBEnginePlugins/Engine", 
-				"KBEnginePlugins/Scripts",
 			}
 			);
 
@@ -39,7 +35,7 @@ public class KBEnginePlugins : ModuleRules
         PublicDependencyModuleNames.AddRange(PublicModules);
 
         PrivateDependencyModuleNames.AddRange(PrivateModules);
-
+        PublicIncludePaths.Add(ModuleDirectory);
         DynamicallyLoadedModuleNames.AddRange(
             new string[]
             {

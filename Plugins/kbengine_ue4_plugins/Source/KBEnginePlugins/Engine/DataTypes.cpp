@@ -297,20 +297,20 @@ bool DATATYPE_VECTOR2::isSameType(KBVar& v)
 
 KBVar* DATATYPE_VECTOR3::createFromStream(MemoryStream& stream)
 {
-	FVector val;
+	FVector3f val;
 	stream >> val.X >> val.Y >> val.Z;
 	return new KBVar(val);
 }
 
 void DATATYPE_VECTOR3::addToStream(Bundle& stream, KBVar& v)
 {
-	FVector val = v;
+	FVector3f val = v;
 	stream << val.X << val.Y << val.Z;
 }
 
 KBVar* DATATYPE_VECTOR3::parseDefaultValStr(const FString& v)
 {
-	return new KBVar(FVector());
+	return new KBVar(FVector3f());
 }
 
 bool DATATYPE_VECTOR3::isSameType(KBVar& v)

@@ -302,7 +302,7 @@ void AvatarBase::onUpdatePropertys(MemoryStream& stream)
 				break;
 			case 40001:
 			{
-				FVector oldval_direction = direction;
+				FVector3f oldval_direction = direction;
 				direction = stream.readVector3();
 
 				if(pProp->isBase())
@@ -446,7 +446,7 @@ void AvatarBase::onUpdatePropertys(MemoryStream& stream)
 			}
 			case 40000:
 			{
-				FVector oldval_position = position;
+				FVector3f oldval_position = position;
 				position = stream.readVector3();
 
 				if(pProp->isBase())
@@ -658,7 +658,7 @@ void AvatarBase::callPropertysSetMethods()
 
 	component3->callPropertysSetMethods();
 
-	FVector oldval_direction = direction;
+	FVector3f oldval_direction = direction;
 	Property* pProp_direction = pdatas[2];
 	if(pProp_direction->isBase())
 	{
@@ -826,7 +826,7 @@ void AvatarBase::callPropertysSetMethods()
 		}
 	}
 
-	FVector oldval_position = position;
+	FVector3f oldval_position = position;
 	Property* pProp_position = pdatas[1];
 	if(pProp_position->isBase())
 	{

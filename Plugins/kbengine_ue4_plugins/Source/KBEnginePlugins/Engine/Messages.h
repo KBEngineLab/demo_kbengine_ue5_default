@@ -1782,19 +1782,19 @@ public:
 		Baseapp_reqAccountBindEmail_argstypes.Add(8);
 		Baseapp_reqAccountBindEmail_argstypes.Add(1);
 		Baseapp_reqAccountBindEmail_argstypes.Add(1);
-		Messages::messages.Add(TEXT("Baseapp_reqAccountBindEmail"), new Message_Baseapp_reqAccountBindEmail(50, "Baseapp_reqAccountBindEmail", -1, 0, Baseapp_reqAccountBindEmail_argstypes));
-		Messages::baseappMessages.Add(50, Messages::messages["Baseapp_reqAccountBindEmail"]);
+		Messages::messages.Add(TEXT("Baseapp_reqAccountBindEmail"), new Message_Baseapp_reqAccountBindEmail(51, "Baseapp_reqAccountBindEmail", -1, 0, Baseapp_reqAccountBindEmail_argstypes));
+		Messages::baseappMessages.Add(51, Messages::messages["Baseapp_reqAccountBindEmail"]);
 
 
 		TArray<uint8> Baseapp_reqAccountNewPassword_argstypes;
 		Baseapp_reqAccountNewPassword_argstypes.Add(8);
 		Baseapp_reqAccountNewPassword_argstypes.Add(1);
 		Baseapp_reqAccountNewPassword_argstypes.Add(1);
-		Messages::messages.Add(TEXT("Baseapp_reqAccountNewPassword"), new Message_Baseapp_reqAccountNewPassword(53, "Baseapp_reqAccountNewPassword", -1, 0, Baseapp_reqAccountNewPassword_argstypes));
-		Messages::baseappMessages.Add(53, Messages::messages["Baseapp_reqAccountNewPassword"]);
+		Messages::messages.Add(TEXT("Baseapp_reqAccountNewPassword"), new Message_Baseapp_reqAccountNewPassword(54, "Baseapp_reqAccountNewPassword", -1, 0, Baseapp_reqAccountNewPassword_argstypes));
+		Messages::baseappMessages.Add(54, Messages::messages["Baseapp_reqAccountNewPassword"]);
 
-		Messages::messages.Add(TEXT("Entity_forwardEntityMessageToCellappFromClient"), new Message_Entity_forwardEntityMessageToCellappFromClient(57, "Entity_forwardEntityMessageToCellappFromClient", -1, -1, TArray<uint8>()));
-		Messages::baseappMessages.Add(57, Messages::messages["Entity_forwardEntityMessageToCellappFromClient"]);
+		Messages::messages.Add(TEXT("Entity_forwardEntityMessageToCellappFromClient"), new Message_Entity_forwardEntityMessageToCellappFromClient(58, "Entity_forwardEntityMessageToCellappFromClient", -1, -1, TArray<uint8>()));
+		Messages::baseappMessages.Add(58, Messages::messages["Entity_forwardEntityMessageToCellappFromClient"]);
 
 		Messages::messages.Add(TEXT("Baseapp_hello"), new Message_Baseapp_hello(200, "Baseapp_hello", -1, -1, TArray<uint8>()));
 		Messages::baseappMessages.Add(200, Messages::messages["Baseapp_hello"]);

@@ -31,8 +31,8 @@ public:
 		return true;
 	}
 
-	virtual void setModelID(int modelID) override {
-		this->modelID = modelID;
+	virtual void setModelID(int modelID1) override {
+		this->modelID = modelID1;
 	}
 
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
@@ -45,8 +45,6 @@ public:
 
 protected:
 
-	/** Resets HMD orientation in VR. */
-	void OnResetVR();
 
 	/** Called for forwards/backward input */
 	void MoveForward(float Value);

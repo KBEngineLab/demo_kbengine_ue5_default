@@ -98,6 +98,15 @@ public:
 	*/
 	UFUNCTION(BlueprintCallable, Category = "KBEngine")
 	bool createAccount(FString username, FString password, const TArray<uint8>& datas);
+	
+	UFUNCTION(BlueprintCallable, Category = "KBEngine")
+	bool resetPassword(FString username);
+	
+	UFUNCTION(BlueprintCallable, Category = "KBEngine")
+	bool bindAccountEmail(FString email);
+
+	UFUNCTION(BlueprintCallable, Category = "KBEngine")
+	bool newPassword(FString oldPassword, FString newPassword);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = KBEngine)
 	FString ip;

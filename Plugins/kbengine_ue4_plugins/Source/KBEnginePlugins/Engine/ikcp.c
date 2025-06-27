@@ -433,11 +433,11 @@ int ikcp_recv(ikcpcb *kcp, char *buffer, int len)
 
 	// move available data from rcv_buf -> rcv_queue
 	while (! iqueue_is_empty(&kcp->rcv_buf)) {
-		IKCPSEG *seg = iqueue_entry(kcp->rcv_buf.next, IKCPSEG, node);
-		if (seg->sn == kcp->rcv_nxt && kcp->nrcv_que < kcp->rcv_wnd) {
-			iqueue_del(&seg->node);
+		IKCPSEG *sub_seg = iqueue_entry(kcp->rcv_buf.next, IKCPSEG, node);
+		if (sub_seg->sn == kcp->rcv_nxt && kcp->nrcv_que < kcp->rcv_wnd) {
+			iqueue_del(&sub_seg->node);
 			kcp->nrcv_buf--;
-			iqueue_add_tail(&seg->node, &kcp->rcv_queue);
+			iqueue_add_tail(&sub_seg->node, &kcp->rcv_queue);
 			kcp->nrcv_que++;
 			kcp->rcv_nxt++;
 		}	else {
@@ -764,7 +764,7 @@ void ikcp_parse_data(ikcpcb *kcp, IKCPSEG *newseg)
 //---------------------------------------------------------------------
 int ikcp_input(ikcpcb *kcp, const char *data, long size)
 {
-	IUINT32 una = kcp->snd_una;
+	IUINT32 snd_una = kcp->snd_una;
 	IUINT32 maxack = 0;
 	int flag = 0;
 
@@ -879,7 +879,7 @@ int ikcp_input(ikcpcb *kcp, const char *data, long size)
 		ikcp_parse_fastack(kcp, maxack);
 	}
 
-	if (_itimediff(kcp->snd_una, una) > 0) {
+	if (_itimediff(kcp->snd_una, snd_una) > 0) {
 		if (kcp->cwnd < kcp->rmt_wnd) {
 			IUINT32 mss = kcp->mss;
 			if (kcp->cwnd < kcp->ssthresh) {
@@ -1079,16 +1079,16 @@ void ikcp_flush(ikcpcb *kcp)
 		}
 
 		if (needsend) {
-			int size, need;
+			int sub_size, need;
 			segment->ts = current;
 			segment->wnd = seg.wnd;
 			segment->una = kcp->rcv_nxt;
 
-			size = (int)(ptr - buffer);
+			sub_size = (int)(ptr - buffer);
 			need = IKCP_OVERHEAD + segment->len;
 
-			if (size + need > (int)kcp->mtu) {
-				ikcp_output(kcp, buffer, size);
+			if (sub_size + need > (int)kcp->mtu) {
+				ikcp_output(kcp, buffer, sub_size);
 				ptr = buffer;
 			}
 

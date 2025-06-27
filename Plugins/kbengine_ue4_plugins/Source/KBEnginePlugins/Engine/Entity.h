@@ -123,8 +123,8 @@ public:
 	{
 	}
 
-	virtual void onPositionChanged(const FVector& oldValue);
-	virtual void onDirectionChanged(const FVector& oldValue);
+	virtual void onPositionChanged(const FVector3f& oldValue);
+	virtual void onDirectionChanged(const FVector3f& oldValue);
 
 	virtual EntityCall* getBaseEntityCall()
 	{
@@ -211,14 +211,14 @@ protected:
 	float velocity_;
 
 public:
-	FVector position;
-	FVector direction;
+	FVector3f position;
+	FVector3f direction;
 	uint32 spaceID;
 
 	// 当前玩家最后一次同步到服务端的位置与朝向
 	// 这两个属性是给引擎KBEngine.cs用的，别的地方不要修改
-	FVector entityLastLocalPos;
-	FVector entityLastLocalDir;
+	FVector3f entityLastLocalPos;
+	FVector3f entityLastLocalDir;
 
 	//EntityCall* baseEntityCall = null;
 	//EntityCall* cellEntityCall = null;

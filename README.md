@@ -1,3 +1,5 @@
+# 废弃：请使用 https://github.com/KBEngineLab/demo_kbengine_ue5_cxx
+
 kbengine_ue5_demo(UE5.6)
 =============
 
@@ -164,3 +166,4 @@ http://www.kbengine.org
 ![screenshots1](http://kbengine.github.io/assets/img/screenshots/ue4_demo1.jpg)
 ![screenshots2](http://kbengine.github.io/assets/img/screenshots/ue4_demo2.jpg)
 ![screenshots3](http://kbengine.github.io/assets/img/screenshots/ue4_demo3.jpg)
+
